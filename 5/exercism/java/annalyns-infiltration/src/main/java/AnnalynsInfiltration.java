@@ -1,17 +1,43 @@
 class AnnalynsInfiltration {
     public static boolean canFastAttack(boolean knightIsAwake) {
-        throw new UnsupportedOperationException("Please implement the (static) AnnalynsInfiltration.canFastAttack() method");
+        boolean canAttack;
+        if(knightIsAwake == true){
+            canAttack = false;
+        } else {
+            canAttack = true;
+        }
+        return canAttack;
     }
 
     public static boolean canSpy(boolean knightIsAwake, boolean archerIsAwake, boolean prisonerIsAwake) {
-        throw new UnsupportedOperationException("Please implement the (static) AnnalynsInfiltration.canSpy() method");
+        boolean canSpy; 
+        if(knightIsAwake || archerIsAwake || prisonerIsAwake == true) {
+            canSpy = true;
+        }else {
+            canSpy = false;
+        }
+        return canSpy;
     }
 
     public static boolean canSignalPrisoner(boolean archerIsAwake, boolean prisonerIsAwake) {
-        throw new UnsupportedOperationException("Please implement the (static) AnnalynsInfiltration.canSignalPrisoner() method");
+        boolean canSignal;
+        if(archerIsAwake == false && prisonerIsAwake == true) {
+            canSignal = true;
+        } else {
+            canSignal = false;
+        }
+        return canSignal;
     }
 
     public static boolean canFreePrisoner(boolean knightIsAwake, boolean archerIsAwake, boolean prisonerIsAwake, boolean petDogIsPresent) {
-        throw new UnsupportedOperationException("Please implement the (static) AnnalynsInfiltration.canFreePrisoner() method");
+        boolean canFree;
+        if(petDogIsPresent == true && archerIsAwake == false) {
+            canFree = true;
+        } else if(petDogIsPresent == false && prisonerIsAwake == true & archerIsAwake == false && knightIsAwake == false) {
+            canFree = true;
+        } else {
+            canFree = false;
+        }
+        return canFree;
     }
 }
