@@ -1,15 +1,84 @@
 public class Blackjack {
 
     public int parseCard(String card) {
-        throw new UnsupportedOperationException("Please implement the Blackjack.parseCard method");
+        int val;
+
+        switch(card) {
+            case "ace":
+                val = 11;
+                break;
+
+            case "two":
+                val = 2;
+                break;
+
+            case "three":
+                val = 3;
+                break;
+
+            case "four":
+                val = 4;
+                break;
+
+            case "five":
+                val = 5;
+                break;
+
+            case "six":
+                val = 6;
+                break;
+
+            case "seven":
+                val = 7;
+                break;
+
+            case "eight":
+                val = 8;
+                break;
+
+            case "nine":
+                val = 9;
+                break;
+
+            case "ten": case "jack": case "queen": case "king":
+                val = 10;
+                break;
+
+            default: 
+                val = 0;
+                break;
+        }
+
+        return val;
     }
 
     public boolean isBlackjack(String card1, String card2) {
-        throw new UnsupportedOperationException("Please implement the Blackjack.isBlackjack method");
+        int parseCard1 = parseCard(card1);
+        int parseCard2 = parseCard(card2);
+        boolean isBlackjack;
+
+        if( parseCard1 + parseCard2 == 21) {
+            isBlackjack = true;
+        } else {
+            isBlackjack = false;
+        }
+
+        return isBlackjack;
     }
 
     public String largeHand(boolean isBlackjack, int dealerScore) {
-        throw new UnsupportedOperationException("Please implement the Blackjack.largeHand method");
+        String largeHand;
+        //make use of hand score Val
+        if(isBlackjack == true) {
+            if(dealerScore != 11 || dealerScore != 10) {
+                largeHand = "W";
+            }else if(dealerScore == 11 || dealerScore == 10){
+                largeHand = "S";
+            }else {
+                largeHand = "P";
+            }
+            return largeHand;
+        } 
     }
 
     public String smallHand(int handScore, int dealerScore) {
