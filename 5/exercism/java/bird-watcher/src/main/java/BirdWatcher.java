@@ -7,7 +7,7 @@ class BirdWatcher {
     }
 
     public int[] getLastWeek() {
-        int[] lastWeeksCount = {0, 2, 5, 3, 7, 8, 4};
+        int[] lastWeeksCount = birdsPerDay;
         return lastWeeksCount;
     }
 
@@ -15,11 +15,10 @@ class BirdWatcher {
         int[] lastWeek = getLastWeek();
         int today = lastWeek[6];
         return today;
-
     }
 
     public void incrementTodaysCount() {
-        
+        birdsPerDay[6] += 1;
     }
 
     public boolean hasDayWithoutBirds() {
