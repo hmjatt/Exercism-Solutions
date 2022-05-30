@@ -12,13 +12,14 @@ class BirdWatcher {
     }
 
     public int getToday() {
-        BirdWatcher birdCount = new BirdWatcher(getLastWeek);
-        int todayCount = birdCount[-1];
-        return todayCount;
+        int[] lastWeek = getLastWeek();
+        int today = lastWeek[6];
+        return today;
+
     }
 
     public void incrementTodaysCount() {
-        throw new UnsupportedOperationException("Please implement the BirdCount.incrementTodaysCount() method");
+        
     }
 
     public boolean hasDayWithoutBirds() {
