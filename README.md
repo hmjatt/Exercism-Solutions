@@ -1,2 +1,2 @@
 # Exercism-Solutions
-Solutions For Exercises at Exercism.org
+Solutions For Java Exercises at Exercism.org
