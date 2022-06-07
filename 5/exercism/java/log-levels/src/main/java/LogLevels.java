@@ -1,7 +1,23 @@
 public class LogLevels {
     
     public static String message(String logLine) {
-        throw new UnsupportedOperationException("Please implement the (static) LogLine.message() method");
+
+        String[] arrOfStrings = logLine.replaceAll("\\s+","").split(":");
+        String message = "";
+
+        // String message = "";
+
+        if(logLine.contains("[ERROR]")) {
+            // String[] subStr = 
+            message = arrOfStrings[1].replace("", " ").trim();
+        } else if(logLine.contains("[WARNING]")) {
+            message = arrOfStrings[1].replace("", " ").trim();
+        } else if(logLine.contains("[INFO]")) {
+            message = arrOfStrings[1].replace("", " ").trim();
+        } else {
+            message = "";
+        }
+        return message;
     }
 
     public static String logLevel(String logLine) {
