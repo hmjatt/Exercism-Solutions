@@ -24,6 +24,7 @@ public class LogLevels {
     }
 
     public static String reformat(String logLine) {
-        throw new UnsupportedOperationException("Please implement the (static) LogLine.reformat() method");
+        String[] arrOfStrings = logLine.replaceAll("\\s+"," ").split(":");
+        return arrOfStrings[1].replaceAll("\\s+"," ").trim() + " " + arrOfStrings[0].toLowerCase().replaceAll("\\[", "(").replaceAll("\\]",")");
     }
 }
