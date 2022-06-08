@@ -19,7 +19,8 @@ public class LogLevels {
     }
 
     public static String logLevel(String logLine) {
-        throw new UnsupportedOperationException("Please implement the (static) LogLine.logLevel() method");
+        String[] arrOfStrings = logLine.replaceAll("\\s+"," ").split(":");
+        return arrOfStrings[0].toLowerCase().replaceAll("\\p{P}","");
     }
 
     public static String reformat(String logLine) {
