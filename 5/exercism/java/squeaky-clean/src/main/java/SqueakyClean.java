@@ -14,9 +14,31 @@ class SqueakyClean {
         //     }
         // }
 
+        // StringBuilder str = new StringBuilder(identifier);
+
+        // for (int i = 0; i < identifier.length(); i++){
+        //     char c = identifier.charAt(i);        
+        //     //Process char
+        //     if(Character.isWhitespace(c) == true ){
+        //         c = c.toString();
+        //     }
+
     
-        String removedSpaces = identifier.replaceAll("\\s","_");
+        // String removedSpaces = identifier.replaceAll("\\s","_");
+
+        // return removedSpaces;
+
+        // str.replace("_");
+
+        String removedSpaces = "";
+
+        if(identifier.contains(" ")) {
+            removedSpaces = identifier.replaceAll("\\s","_");
+           
+
+        }
 
         return removedSpaces;
+
     }
 }
