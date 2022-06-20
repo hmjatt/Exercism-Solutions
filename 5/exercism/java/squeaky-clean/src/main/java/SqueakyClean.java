@@ -30,27 +30,36 @@ class SqueakyClean {
 
         // str.replace("_");
 
-        String removedSpaces = "";
+        // String removedSpaces = "";
 
-        if(identifier.contains(" ")) {
-            removedSpaces = identifier.replaceAll("\\s","_");
+        // if(identifier.contains(" ")) {
+        //     removedSpaces = identifier.replaceAll("\\s","_");
            
 
-        } else if (identifier.contains("\\p{Cc}")) {
-            removedSpaces = identifier.replaceAll("\\p{Cc}", "CTRL");
-        }
-
-        return removedSpaces;
-
-        // char[] chars = identifier.toCharArray();
-        // StringBuilder sb = new StringBuilder();
-        // for(int i = 0; i < chars.length; i++) {
-        //     if(Character.isWhitespace(chars[i])) {
-        //         // sb.append(chars[i]);
-        //         replace(" ", "_");
-        //     }
+        // } else if (identifier.contains("\\p{Cc}")) {
+        //     removedSpaces = identifier.replaceAll("\\p{Cc}", "CTRL");
         // }
-        // return sb.toString();
+
+        // return removedSpaces;
+
+        char[] chars = identifier.toCharArray();
+        StringBuilder sb = new StringBuilder();
+        for(int i = 0; i < chars.length; i++) {
+            if(Character.isWhitespace(chars[i])) {
+                chars[i] = "_".charAt(0);
+                sb.append(chars[i]);
+            } else if(!Character.isWhitespace(chars[i])) {
+                sb.append(chars[i]);
+            }
+        }
+        return sb.toString();
+
+        // String newSentence = identifier.codePoints()
+        // .filter(c -> !Character.isWhitespace(c))
+        // .collect(StringBuilder::new, 
+        //       StringBuilder::appendCodePoint, 
+        //       StringBuilder::append).toString();
+        
 
 
     }
