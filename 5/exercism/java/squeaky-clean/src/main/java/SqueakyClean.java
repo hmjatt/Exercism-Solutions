@@ -15,7 +15,7 @@ class SqueakyClean {
         // }
 
     
-        String removedSpaces = identifier.replaceAll("\\s+","_");
+        String removedSpaces = identifier.replaceAll("\\s","_");
 
         return removedSpaces;
     }
