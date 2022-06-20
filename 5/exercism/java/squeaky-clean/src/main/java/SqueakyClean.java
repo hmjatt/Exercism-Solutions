@@ -48,7 +48,9 @@ class SqueakyClean {
             if(Character.isWhitespace(chars[i])) {
                 chars[i] = "_".charAt(0);
                 sb.append(chars[i]);
-            } else if(!Character.isWhitespace(chars[i])) {
+            } else if(!Character.isLetter(chars[i])) {
+                chars[i] = "CTRL".charAt(0);
+            } else {
                 sb.append(chars[i]);
             }
         }
