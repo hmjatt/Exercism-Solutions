@@ -36,9 +36,22 @@ class SqueakyClean {
             removedSpaces = identifier.replaceAll("\\s","_");
            
 
+        } else if (identifier.contains("\\p{Cc}")) {
+            removedSpaces = identifier.replaceAll("\\p{Cc}", "CTRL");
         }
 
         return removedSpaces;
+
+        // char[] chars = identifier.toCharArray();
+        // StringBuilder sb = new StringBuilder();
+        // for(int i = 0; i < chars.length; i++) {
+        //     if(Character.isWhitespace(chars[i])) {
+        //         // sb.append(chars[i]);
+        //         replace(" ", "_");
+        //     }
+        // }
+        // return sb.toString();
+
 
     }
 }
